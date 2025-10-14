@@ -60,6 +60,9 @@
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
+        ],
+        "update-readme": [
+            "@php readme-updater.php"
         ]
     },
     "extra": {
