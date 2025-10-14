@@ -7,26 +7,29 @@ Sistem auto-update README telah berhasil diimplementasikan untuk aplikasi Larave
 ## 🔧 Components yang Telah Dibuat
 
 ### 1. **readme-updater.php**
-- **Purpose**: Core script untuk auto-update README
-- **Features**:
-  - Scan routes dari `routes/web.php`
-  - Deteksi controllers, models, views, dan migrations
-  - Update tabel routes otomatis
-  - Update checklist fitur yang sudah diimplementasikan
-  - Update timestamp modifikasi
+
+-   **Purpose**: Core script untuk auto-update README
+-   **Features**:
+    -   Scan routes dari `routes/web.php`
+    -   Deteksi controllers, models, views, dan migrations
+    -   Update tabel routes otomatis
+    -   Update checklist fitur yang sudah diimplementasikan
+    -   Update timestamp modifikasi
 
 ### 2. **Git Pre-commit Hook**
-- **Location**: `.git/hooks/pre-commit`
-- **Purpose**: Menjalankan update README otomatis setiap git commit
-- **Behavior**: 
-  - Auto-run `readme-updater.php`
-  - Stage perubahan README.md jika ada
-  - Lanjutkan proses commit
+
+-   **Location**: `.git/hooks/pre-commit`
+-   **Purpose**: Menjalankan update README otomatis setiap git commit
+-   **Behavior**:
+    -   Auto-run `readme-updater.php`
+    -   Stage perubahan README.md jika ada
+    -   Lanjutkan proses commit
 
 ### 3. **Composer Script**
-- **Command**: `composer update-readme`
-- **Purpose**: Memungkinkan manual update README
-- **Usage**: Run kapan saja butuh update manual
+
+-   **Command**: `composer update-readme`
+-   **Purpose**: Memungkinkan manual update README
+-   **Usage**: Run kapan saja butuh update manual
 
 ## ✅ Testing Results
 
@@ -40,9 +43,10 @@ Sistem telah ditest dan berfungsi dengan baik:
 ## 🚀 How It Works
 
 ### Auto-Detection Flow:
+
 ```
 1. Script scan routes/web.php → Detect routes
-2. Scan app/Http/Controllers/ → Detect controllers  
+2. Scan app/Http/Controllers/ → Detect controllers
 3. Scan app/Models/ → Detect models
 4. Scan resources/views/ → Detect views
 5. Scan database/migrations/ → Detect migrations
@@ -51,6 +55,7 @@ Sistem telah ditest dan berfungsi dengan baik:
 ```
 
 ### Manual Update:
+
 ```bash
 # Via composer
 composer update-readme
@@ -60,6 +65,7 @@ php readme-updater.php
 ```
 
 ### Auto-Update via Git:
+
 ```bash
 # Setiap commit akan trigger update otomatis
 git add .
@@ -69,19 +75,20 @@ git commit -m "Your changes"
 
 ## 📝 Implementation Notes
 
-- **Compatibility**: Tested di Windows dengan PowerShell
-- **PHP Version**: Compatible dengan PHP 8.2+
-- **Dependencies**: Hanya menggunakan PHP standard library
-- **Performance**: Lightweight, scan cepat untuk project kecil-menengah
+-   **Compatibility**: Tested di Windows dengan PowerShell
+-   **PHP Version**: Compatible dengan PHP 8.2+
+-   **Dependencies**: Hanya menggunakan PHP standard library
+-   **Performance**: Lightweight, scan cepat untuk project kecil-menengah
 
 ## 🔄 Future Enhancements
 
 Sistem ini bisa diperluas untuk:
-- [ ] Deteksi middleware
-- [ ] Scan API routes
-- [ ] Integration dengan testing results
-- [ ] Auto-generate API documentation
-- [ ] Database schema documentation
+
+-   [ ] Deteksi middleware
+-   [ ] Scan API routes
+-   [ ] Integration dengan testing results
+-   [ ] Auto-generate API documentation
+-   [ ] Database schema documentation
 
 ## ✨ Benefits
 
