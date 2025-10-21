@@ -1,13 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JenisBarangController;
 
-// Main landing page
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
-// Dashboard route
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+// Routes untuk CRUD Jenis Barang
+Route::resource('jenis-barang', JenisBarangController::class);
