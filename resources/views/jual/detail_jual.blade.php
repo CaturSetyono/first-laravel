@@ -3,7 +3,7 @@
 @section('title', 'Detail Jual - Daftar Belanja')
 
 @section('content_header')
-    <h1><i class="fas fa-shopping-basket"></i> Daftar Belanja</h1>
+<h1><i class="fas fa-shopping-basket"></i> Daftar Belanja</h1>
 @stop
 
 @section('content')
@@ -38,7 +38,7 @@
         <form>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="jual_id" value="{{ $id }}">
-            
+
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead class="table-light">
@@ -55,8 +55,8 @@
                     <tbody>
                         <tr>
                             <td>
-                                <input type="text" class="form-control form-control-sm barang_id" name="barang_id" 
-                                       placeholder="Kode" title="Setelah diisi tekan enter">
+                                <input type="text" class="form-control form-control-sm barang_id" name="barang_id"
+                                    placeholder="Kode" title="Setelah diisi tekan enter">
                             </td>
                             <td>
                                 <input class="form-control form-control-sm" id="nama_barang" type="text" name="nama_barang" disabled>
@@ -68,12 +68,12 @@
                                 <input class="form-control form-control-sm" id="satuan" type="text" name="satuan" disabled style="width: 100px;">
                             </td>
                             <td>
-                                <input class="form-control form-control-sm" id="harga" type="number" name="harga_sekarang" 
-                                       style="text-align:right" disabled>
+                                <input class="form-control form-control-sm" id="harga" type="number" name="harga_sekarang"
+                                    style="text-align:right" disabled>
                             </td>
                             <td>
-                                <input class="form-control form-control-sm" id="total" type="number" name="total" 
-                                       style="text-align:right" readonly>
+                                <input class="form-control form-control-sm" id="total" type="number" name="total"
+                                    style="text-align:right" readonly>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-success btn-sm add-row">
@@ -143,164 +143,167 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('js/admin-pro.js') }}" defer></script>
 <script>
-$(document).ready(function() {
-    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    var jTotal = 0;
-    
-    // Kode barang ditekan enter
-    $(".barang_id").keypress(function(e) {
-        var keycode = (e.keyCode ? e.keyCode : e.which);
-        if(keycode == '13') {
-            e.preventDefault();
-            if ($('.barang_id').val() == "") {
-                alert("Kode barang tidak boleh kosong");
+    $(document).ready(function() {
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var jTotal = 0;
+
+        // Kode barang ditekan enter
+        $(".barang_id").keypress(function(e) {
+            var keycode = (e.keyCode ? e.keyCode : e.which);
+            if (keycode == '13') {
+                e.preventDefault();
+                if ($('.barang_id').val() == "") {
+                    alert("Kode barang tidak boleh kosong");
+                    return false;
+                }
+
+                $.ajax({
+                    url: '/bacaBarang',
+                    type: 'POST',
+                    data: {
+                        _token: CSRF_TOKEN,
+                        id: $(".barang_id").val()
+                    },
+                    dataType: 'JSON',
+                    success: function(data) {
+                        if (data === null || data.nama_barang === undefined) {
+                            alert("Barang Tidak Ada");
+                            $(".barang_id").focus();
+                            return false;
+                        }
+                        $("#nama_barang").val(data.nama_barang);
+                        $("#harga").val(data.harga);
+                        $("#satuan").val(data.satuan);
+                        $("#qty").val(1);
+                        $("#qty").focus();
+                    },
+                    error: function() {
+                        alert("Barang tidak ditemukan!");
+                    }
+                });
+            }
+        });
+
+        // Jumlah barang ditekan enter
+        $("#qty").keypress(function(e) {
+            var keycode = (e.keyCode ? e.keyCode : e.which);
+            if (keycode == '13') {
+                e.preventDefault();
+                var qty = parseInt(e.target.value);
+                var harga = parseInt($("#harga").val());
+                var total = qty * harga;
+                $("#total").val(total);
+                $(".add-row").focus();
+            }
+        });
+
+        // Menambahkan ke keranjang belanja
+        $(".add-row").click(function() {
+            var barang_id = $(".barang_id").val();
+            var qty = $("#qty").val();
+            var nama_barang = $("#nama_barang").val();
+            var satuan = $("#satuan").val();
+            var harga = $("#harga").val();
+            var total = $("#total").val();
+
+            if (!barang_id || !qty || qty <= 0) {
+                alert("Lengkapi data barang!");
                 return false;
             }
-            
-            $.ajax({
-                url: '/bacaBarang',
-                type: 'POST',
-                data: {_token: CSRF_TOKEN, id: $(".barang_id").val()},
-                dataType: 'JSON',
-                success: function (data) {
-                    if(data === null || data.nama_barang === undefined) {
-                        alert("Barang Tidak Ada");
-                        $(".barang_id").focus();
-                        return false;
-                    }
-                    $("#nama_barang").val(data.nama_barang);
-                    $("#harga").val(data.harga);
-                    $("#satuan").val(data.satuan);
-                    $("#qty").val(1);
-                    $("#qty").focus();
-                },
-                error: function() {
-                    alert("Barang tidak ditemukan!");
+
+            jTotal += parseInt(total);
+
+            var html = "<tr><td style='text-align:center'>" +
+                "<input type='checkbox' name='record'></td><td>" +
+                barang_id + "</td><td>" +
+                nama_barang + "</td><td style='text-align:right'>" +
+                qty + "</td><td>" +
+                satuan + "</td><td style='text-align:right'>" +
+                parseInt(harga).toLocaleString('id-ID') + "</td><td style='text-align:right'>" +
+                parseInt(total).toLocaleString('id-ID') + "</td></tr>";
+
+            $("#table1").find('tbody').append(html);
+            $("#jtotal").text(jTotal.toLocaleString('id-ID'));
+
+            // Kosongkan isian
+            $(".barang_id").val('');
+            $(".barang_id").focus();
+            $("#nama_barang").val('');
+            $("#qty").val(0);
+            $("#satuan").val('');
+            $("#harga").val(0);
+            $("#total").val(0);
+        });
+
+        // Menghapus jika isian salah
+        $(".delete-row").click(function() {
+            var jtotal = jTotal;
+            var hasChecked = false;
+
+            $("table tbody").find('input[name="record"]').each(function() {
+                if ($(this).is(":checked")) {
+                    hasChecked = true;
+                    var currow = $(this).closest('tr');
+                    var isicol6 = currow.find('td:eq(6)').text().replace(/\./g, '');
+                    jtotal -= parseInt(isicol6);
+                    $(this).parents("tr").remove();
                 }
             });
-        }
-    });
-    
-    // Jumlah barang ditekan enter
-    $("#qty").keypress(function(e) {
-        var keycode = (e.keyCode ? e.keyCode : e.which);
-        if(keycode == '13') {
-            e.preventDefault();
-            var qty = parseInt(e.target.value);
-            var harga = parseInt($("#harga").val());
-            var total = qty * harga;
-            $("#total").val(total);
-            $(".add-row").focus();
-        }
-    });
-    
-    // Menambahkan ke keranjang belanja
-    $(".add-row").click(function() {
-        var barang_id = $(".barang_id").val();
-        var qty = $("#qty").val();
-        var nama_barang = $("#nama_barang").val();
-        var satuan = $("#satuan").val();
-        var harga = $("#harga").val();
-        var total = $("#total").val();
-        
-        if(!barang_id || !qty || qty <= 0) {
-            alert("Lengkapi data barang!");
-            return false;
-        }
-        
-        jTotal += parseInt(total);
-        
-        var html = "<tr><td style='text-align:center'>" +
-            "<input type='checkbox' name='record'></td><td>" +
-            barang_id + "</td><td>" +
-            nama_barang + "</td><td style='text-align:right'>" +
-            qty + "</td><td>" +
-            satuan + "</td><td style='text-align:right'>" +
-            parseInt(harga).toLocaleString('id-ID') + "</td><td style='text-align:right'>" +
-            parseInt(total).toLocaleString('id-ID') + "</td></tr>";
-        
-        $("#table1").find('tbody').append(html);
-        $("#jtotal").text(jTotal.toLocaleString('id-ID'));
-        
-        // Kosongkan isian
-        $(".barang_id").val('');
-        $(".barang_id").focus();
-        $("#nama_barang").val('');
-        $("#qty").val(0);
-        $("#satuan").val('');
-        $("#harga").val(0);
-        $("#total").val(0);
-    });
-    
-    // Menghapus jika isian salah
-    $(".delete-row").click(function() {
-        var jtotal = jTotal;
-        var hasChecked = false;
-        
-        $("table tbody").find('input[name="record"]').each(function() {
-            if($(this).is(":checked")) {
-                hasChecked = true;
-                var currow = $(this).closest('tr');
-                var isicol6 = currow.find('td:eq(6)').text().replace(/\./g, '');
-                jtotal -= parseInt(isicol6);
-                $(this).parents("tr").remove();
+
+            if (!hasChecked) {
+                alert("Pilih item yang akan dihapus!");
+                return false;
             }
+
+            jTotal = jtotal;
+            $("#jtotal").text(jTotal.toLocaleString('id-ID'));
         });
-        
-        if(!hasChecked) {
-            alert("Pilih item yang akan dihapus!");
-            return false;
-        }
-        
-        jTotal = jtotal;
-        $("#jtotal").text(jTotal.toLocaleString('id-ID'));
-    });
-    
-    // Kirim ke server, simpan rekaman
-    $(".simpan").click(function() {
-        let dataBarang = [];
-        var hasData = false;
-        
-        $("table#table1 tbody tr").each(function() {
-            hasData = true;
-            var currow = $(this);
-            dataBarang.push({
-                'barang_id': currow.find('td:eq(1)').text(),
-                'qty': currow.find('td:eq(3)').text(),
-                'harga_sekarang': currow.find('td:eq(5)').text().replace(/\./g, ''),
-                'jual_id': "{{ $id }}"
+
+        // Kirim ke server, simpan rekaman
+        $(".simpan").click(function() {
+            let dataBarang = [];
+            var hasData = false;
+
+            $("table#table1 tbody tr").each(function() {
+                hasData = true;
+                var currow = $(this);
+                dataBarang.push({
+                    'barang_id': currow.find('td:eq(1)').text(),
+                    'qty': currow.find('td:eq(3)').text(),
+                    'harga_sekarang': currow.find('td:eq(5)').text().replace(/\./g, ''),
+                    'jual_id': "{{ $id }}"
+                });
             });
-        });
-        
-        if(!hasData) {
-            alert("Keranjang belanja masih kosong!");
-            return false;
-        }
-        
-        if(!confirm("Simpan transaksi ini?")) {
-            return false;
-        }
-        
-        // Kirim ke server untuk disimpan
-        $.ajax({
-            url: '/jual/simpan',
-            type: 'POST',
-            data: {
-                _token: CSRF_TOKEN,
-                idJual: "{{ $id }}",
-                dataBarang: dataBarang
+
+            if (!hasData) {
+                alert("Keranjang belanja masih kosong!");
+                return false;
             }
-        })
-        .done(function (response) {
-            if (response.berhasil) {
-                window.location.href = response.urlCetak;
+
+            if (!confirm("Simpan transaksi ini?")) {
+                return false;
             }
-        })
-        .fail(function (error) {
-            alert("Gagal menyimpan transaksi!");
-            console.error(error);
+
+            // Kirim ke server untuk disimpan
+            $.ajax({
+                    url: '/jual/simpan',
+                    type: 'POST',
+                    data: {
+                        _token: CSRF_TOKEN,
+                        idJual: "{{ $id }}",
+                        dataBarang: dataBarang
+                    }
+                })
+                .done(function(response) {
+                    if (response.berhasil) {
+                        window.location.href = response.urlCetak;
+                    }
+                })
+                .fail(function(error) {
+                    alert("Gagal menyimpan transaksi!");
+                    console.error(error);
+                });
         });
     });
-});
 </script>
 @stop
