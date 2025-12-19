@@ -1,61 +1,178 @@
+# Proyek Web SIA - Sistem Informasi Akademik
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📋 Tentang Project
 
-## About Laravel
+Project Laravel ini adalah Sistem Informasi Akademik yang mencakup berbagai fitur manajemen transaksi dan master data. Dibangun dengan Laravel 12.33.0 dan AdminLTE untuk interface yang modern dan responsif.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. **Query Builder Examples**
+- Berbagai contoh penggunaan Query Builder
+- Operasi CRUD dasar
+- Aggregate functions
+- Join operations
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. **Katalog Buku**
+- CRUD lengkap untuk buku
+- Relasi dengan pengarang dan kota
+- Pencarian dan filtering
 
-## Learning Laravel
+### 3. **Sistem Penjualan Online**
+- Transaksi penjualan sederhana
+- Auto-reduce stock
+- Multi-item per transaksi
+- Struk pembayaran
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 4. **Sistem Transaksi dengan Pelanggan (POS)**
+- Master data pelanggan
+- Shopping cart dengan AJAX
+- Single Page Application (SPA)
+- Real-time calculation
+- Track kasir/user
+- Print receipt
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 5. **Master Data**
+- Jenis Barang
+- Barang (dengan stok)
+- Pelanggan
+- Pengarang & Buku
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tech Stack
 
-## Laravel Sponsors
+- **Framework:** Laravel 12.33.0
+- **PHP:** 8.4.10
+- **Database:** MySQL
+- **UI:** AdminLTE + Bootstrap 5
+- **Icons:** Bootstrap Icons + FontAwesome
+- **JavaScript:** jQuery 3.6.0 + AJAX
+- **Server:** XAMPP
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📦 Database Structure
 
-### Premium Partners
+### Tables:
+- `users` - User authentication
+- `pelanggan` - Customer data
+- `jenis_barang` - Product categories
+- `barang` - Products with stock
+- `kota` - Cities
+- `pengarang` - Authors
+- `buku` - Books
+- `jual` - Sales transactions
+- `detail_jual` - Transaction details
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🚀 Installation
 
-## Contributing
+```bash
+# Clone repository
+git clone https://github.com/lana-techn/Proyek-Web-SIA.git
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Install dependencies
+composer install
+npm install
 
-## Code of Conduct
+# Copy environment file
+cp .env.example .env
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Generate application key
+php artisan key:generate
 
-## Security Vulnerabilities
+# Configure database in .env
+DB_DATABASE=proyek_web
+DB_USERNAME=root
+DB_PASSWORD=
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Run migrations
+php artisan migrate
 
-## License
+# Seed database with sample data
+php artisan db:seed
+
+# Run development server
+php artisan serve
+```
+
+## 📊 Database Seeding
+
+### Quick Setup on New Device
+
+Gunakan seeder otomatis untuk setup database lengkap dengan satu command:
+
+```bash
+# Fresh database + seeding all sample data
+php artisan migrate:fresh --seed
+
+# Atau hanya seeding tanpa fresh
+php artisan db:seed --class=DataSeeder
+```
+
+### Data yang di-seed:
+
+```
+✅ Jenis Barang: 8 kategori (Elektronik, Pakaian, Makanan, etc)
+✅ Barang: 20 produk dengan stock dan harga
+✅ Pelanggan: 5 customer dengan data lengkap
+✅ Kota: 5 kota di Indonesia
+✅ Pengarang: 5 author buku Indonesia
+✅ Buku: 7 buku dengan ISBN dan detail
+```
+
+### DataSeeder Details:
+
+- **File:** `database/seeders/DataSeeder.php`
+- **Backup Data:** `database_backup.json` (JSON export dari database)
+- **Status:** Tested & verified ✅
+
+### Untuk Migrasi ke Device Baru:
+
+1. Clone repository
+2. Copy `.env` dan configure database
+3. Run: `php artisan migrate:fresh --seed`
+4. Database siap dengan semua sample data!
+
+## 👤 Default Users
+
+```
+Admin User:
+Email: admin@panuntun.com
+Password: password
+
+Test User:
+Email: test@example.com
+Password: password
+```
+
+## 📊 Sample Data
+
+Setelah seeding, database akan memiliki:
+- 2 Users
+- 8 Jenis Barang
+- 20 Barang
+- 5 Pelanggan
+- 5 Kota
+- 5 Pengarang
+- 7 Buku
+
+## 🎨 Features Preview
+
+### Transaction Flow (POS System):
+1. `/jual` - Daftar transaksi
+2. `/jual/create` - Form pelanggan (AJAX lookup)
+3. Shopping cart - Tambah barang dinamis
+4. Submit - Auto reduce stock
+5. Print receipt
+
+### Query Builder Examples:
+- `/db/bacaDb1` - Basic select
+- `/db/bacaDb2` - Where conditions
+- `/db/aggregate` - Count, sum, avg, etc.
+- `/db/selectData` - Advanced queries
+
+## 📝 License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 👨‍💻 Developer
+
+Developed for academic purposes - Proyek Web SIA
