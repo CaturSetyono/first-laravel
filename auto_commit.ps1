@@ -1,8 +1,8 @@
 $ErrorActionPreference = "Stop"
 
-Write-Host "Starting auto-commit process..." -ForegroundColor Cyan
+Write-Host "Starting auto-commit process (One by One)..." -ForegroundColor Cyan
 
-# Get list of changed files
+# Get all changes (staged, unstaged, and untracked)
 $changes = git status --porcelain
 
 if (-not $changes) {
@@ -10,42 +10,43 @@ if (-not $changes) {
     exit
 }
 
-foreach ($change in $changes) {
-    if ([string]::IsNullOrWhiteSpace($change)) { continue }
+foreach ($line in $changes) {
+    if ([string]::IsNullOrWhiteSpace($line)) { continue }
 
-    # Extract status code (first 2 chars)
-    $statusCode = $change.Substring(0, 2)
-    
-    # Extract filename (rest of the string)
-    $rawFile = $change.Substring(3)
-    
-    # Handle renames (format: R  old -> new)
-    if ($statusCode.Trim() -eq "R") {
-        $parts = $rawFile -split " -> "
-        $file = $parts[1]
-    } else {
-        $file = $rawFile
+    # Parse status and filename using Regex to handle spaces and quotes correctly
+    # Pattern: 2 chars for status, 1 space, then the rest is the filename (possibly quoted)
+    if ($line -match "^(..)\s+(.*)$") {
+        $status = $matches[1]
+        $rawPath = $matches[2]
+        
+        # Handle Rename format: "old -> new"
+        if ($rawPath -match " -> ") {
+            $parts = $rawPath -split " -> "
+            $path = $parts[1] 
+        } else {
+            $path = $rawPath
+        }
+
+        # Remove surrounding quotes if git added them
+        $path = $path.Trim('"')
+
+        Write-Host "Processing: $status - $path" -ForegroundColor Green
+
+        # Determine action verb for commit message
+        $verb = "update"
+        if ($status -match "\?\?") { $verb = "create" }
+        elseif ($status -match "A") { $verb = "create" }
+        elseif ($status -match "D") { $verb = "delete" }
+        elseif ($status -match "R") { $verb = "move" }
+
+        # Add the specific file
+        git add "$path"
+
+        # Commit
+        # Check if there are actually changes staged for this file before committing
+        # (Handling case where file might be ignored or empty change)
+        git commit -m "chore($verb): $path"
     }
-
-    # Remove wrapping quotes if present (Git quotes paths with spaces)
-    $file = $file.Trim('"')
-
-    Write-Host "Processing: $file" -ForegroundColor Green
-    
-    # Determine concise action for commit message
-    $action = "update"
-    if ($statusCode -match "\?\?") { $action = "create" }
-    elseif ($statusCode -match "A") { $action = "create" }
-    elseif ($statusCode -match "D") { $action = "delete" }
-    elseif ($statusCode -match "R") { $action = "move" }
-    elseif ($statusCode -match "M") { $action = "update" }
-
-    # Add the specific file
-    git add "$file"
-    
-    # Commit with standard message format
-    $msg = "chore($action): $file"
-    git commit -m "$msg"
 }
 
-Write-Host "All changes have been committed one by one." -ForegroundColor Cyan
+Write-Host "All changes have been committed individually." -ForegroundColor Cyan
