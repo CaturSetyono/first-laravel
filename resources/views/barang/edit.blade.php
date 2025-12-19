@@ -3,7 +3,7 @@
 @section('title', 'Edit Barang')
 
 @section('content_header')
-    <h1><i class="fas fa-edit"></i> Edit Barang</h1>
+<h1><i class="fas fa-edit"></i> Edit Barang</h1>
 @stop
 
 @section('content')
@@ -21,31 +21,31 @@
                 <select name="jenis_barang" class="form-select" required>
                     <option value="">-- Pilih Jenis Barang --</option>
                     @foreach($jenisBarang as $j)
-                        <option value="{{ $j->id }}" {{ $barang->jenis_barang == $j->id ? 'selected' : '' }}>
-                            {{ $j->nama_jenis }}
-                        </option>
+                    <option value="{{ $j->id }}" {{ $barang->jenis_barang == $j->id ? 'selected' : '' }}>
+                        {{ $j->nama_jenis }}
+                    </option>
                     @endforeach
                 </select>
                 @error('jenis_barang')
-                    <div class="text-danger small">{{ $message }}</div>
+                <div class="text-danger small">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Nama Barang</label>
                 <input type="text" name="nama_barang" class="form-control"
-                       value="{{ old('nama_barang', $barang->nama_barang) }}" required>
+                    value="{{ old('nama_barang', $barang->nama_barang) }}" required>
                 @error('nama_barang')
-                    <div class="text-danger small">{{ $message }}</div>
+                <div class="text-danger small">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Satuan</label>
                 <input type="text" name="satuan" class="form-control"
-                       value="{{ old('satuan', $barang->satuan) }}" required>
+                    value="{{ old('satuan', $barang->satuan) }}" required>
                 @error('satuan')
-                    <div class="text-danger small">{{ $message }}</div>
+                <div class="text-danger small">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -53,17 +53,17 @@
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Harga Pokok</label>
                     <input type="number" name="harga_pokok" class="form-control"
-                           value="{{ old('harga_pokok', $barang->harga_pokok) }}" required>
+                        value="{{ old('harga_pokok', $barang->harga_pokok) }}" required>
                     @error('harga_pokok')
-                        <div class="text-danger small">{{ $message }}</div>
+                    <div class="text-danger small">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Harga Jual</label>
                     <input type="number" name="harga_jual" class="form-control"
-                           value="{{ old('harga_jual', $barang->harga_jual) }}" required>
+                        value="{{ old('harga_jual', $barang->harga_jual) }}" required>
                     @error('harga_jual')
-                        <div class="text-danger small">{{ $message }}</div>
+                    <div class="text-danger small">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
@@ -71,9 +71,9 @@
             <div class="mb-3">
                 <label class="form-label">Stok</label>
                 <input type="number" name="stok" class="form-control"
-                       value="{{ old('stok', $barang->stok) }}" required>
+                    value="{{ old('stok', $barang->stok) }}" required>
                 @error('stok')
-                    <div class="text-danger small">{{ $message }}</div>
+                <div class="text-danger small">{{ $message }}</div>
                 @enderror
             </div>
 
