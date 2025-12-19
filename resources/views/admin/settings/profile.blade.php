@@ -3,7 +3,7 @@
 @section('title', 'Edit Profile')
 
 @section('content_header')
-    <h1><i class="fas fa-user-edit"></i> Edit Profile</h1>
+<h1><i class="fas fa-user-edit"></i> Edit Profile</h1>
 @stop
 
 @section('content')
@@ -11,12 +11,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <i class="fas fa-check-circle"></i> {{ session('success') }}
-                </div>
+            <div class="alert alert-success alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <i class="fas fa-check-circle"></i> {{ session('success') }}
+            </div>
             @endif
 
             <div class="card card-primary">
@@ -27,22 +27,22 @@
                 <form action="{{ route('admin.settings.profile.update') }}" method="POST">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">
                                 <i class="fas fa-user"></i> Nama Lengkap
                                 <span class="text-danger">*</span>
                             </label>
-                            <input type="text" 
-                                   class="form-control @error('name') is-invalid @enderror" 
-                                   id="name" 
-                                   name="name" 
-                                   value="{{ old('name', Auth::user()->name) }}"
-                                   placeholder="Masukkan nama lengkap"
-                                   required>
+                            <input type="text"
+                                class="form-control @error('name') is-invalid @enderror"
+                                id="name"
+                                name="name"
+                                value="{{ old('name', Auth::user()->name) }}"
+                                placeholder="Masukkan nama lengkap"
+                                required>
                             @error('name')
-                                <span class="invalid-feedback">{{ $message }}</span>
+                            <span class="invalid-feedback">{{ $message }}</span>
                             @enderror
                         </div>
 
@@ -51,20 +51,20 @@
                                 <i class="fas fa-envelope"></i> Email
                                 <span class="text-danger">*</span>
                             </label>
-                            <input type="email" 
-                                   class="form-control @error('email') is-invalid @enderror" 
-                                   id="email" 
-                                   name="email" 
-                                   value="{{ old('email', Auth::user()->email) }}"
-                                   placeholder="Masukkan email"
-                                   required>
+                            <input type="email"
+                                class="form-control @error('email') is-invalid @enderror"
+                                id="email"
+                                name="email"
+                                value="{{ old('email', Auth::user()->email) }}"
+                                placeholder="Masukkan email"
+                                required>
                             @error('email')
-                                <span class="invalid-feedback">{{ $message }}</span>
+                            <span class="invalid-feedback">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div class="alert alert-info">
-                            <i class="fas fa-info-circle"></i> 
+                            <i class="fas fa-info-circle"></i>
                             <strong>Informasi:</strong> Pastikan email Anda valid dan aktif untuk menerima notifikasi.
                         </div>
                     </div>
