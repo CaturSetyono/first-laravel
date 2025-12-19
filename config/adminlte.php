@@ -402,7 +402,7 @@ return [
             'icon' => 'fas fa-fw fa-tags',
             'icon_color' => 'cyan',
         ],
-        
+
         ['header' => 'PENGATURAN'],
         [
             'text' => 'Pengaturan',
