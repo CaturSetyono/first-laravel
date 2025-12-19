@@ -1,0 +1,1 @@
+<h1 style="font-family: 'DM Serif Display', serif; color: #2C2C2C;">Welcome to RetroVault Dashboard</h1>
