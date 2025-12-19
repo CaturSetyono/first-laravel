@@ -12,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
      * Asset version for cache busting
      */
     private const ASSET_VERSION = '1.0.3';
-    
+
     /**
      * Register any application services.
      */
@@ -28,12 +28,12 @@ class AppServiceProvider extends ServiceProvider
     {
         // Share admin assets version globally
         View::share('assetVersion', self::ASSET_VERSION);
-        
+
         // Share admin assets globally to all views
         View::composer('adminlte::page', function ($view) {
             $view->with('adminProAssets', true);
         });
-        
+
         // Custom Blade directive for optimized loading with versioning
         Blade::directive('adminProStyles', function () {
             $version = self::ASSET_VERSION;
@@ -44,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
                    '<link rel=\"stylesheet\" href=\"' . asset('css/preloader.css') . '?v={$version}\">'
             ; ?>";
         });
-        
+
         Blade::directive('adminProScripts', function () {
             $version = self::ASSET_VERSION;
             return "<?php echo '<script src=\"' . asset('js/admin-pro.js') . '?v={$version}\" defer></script>'; ?>";
