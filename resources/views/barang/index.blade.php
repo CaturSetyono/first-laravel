@@ -3,7 +3,7 @@
 @section('title', 'Daftar Barang')
 
 @section('content_header')
-    <h1><i class="fas fa-box-seam"></i> Daftar Barang</h1>
+<h1><i class="fas fa-box-seam"></i> Daftar Barang</h1>
 @stop
 
 @section('content')
@@ -16,12 +16,14 @@
         margin-bottom: 24px;
         border-left: 4px solid #3b82f6;
     }
+
     .page-header h3 {
         margin: 0;
         color: #1a1d29;
         font-weight: 700;
         font-size: 1.75rem;
     }
+
     .card-table {
         background-color: #ffffff;
         border-radius: 12px;
@@ -29,9 +31,11 @@
         overflow: hidden;
         border: 1px solid #e5e7eb;
     }
+
     .table {
         margin-bottom: 0;
     }
+
     .table thead th {
         background-color: #f8fafc;
         color: #475569;
@@ -42,22 +46,27 @@
         padding: 16px;
         border-bottom: 2px solid #e5e7eb;
     }
+
     .table tbody tr {
         transition: all 0.2s ease;
         border-bottom: 1px solid #f1f5f9;
     }
+
     .table tbody tr:hover {
         background-color: #f8fafc;
     }
+
     .table tbody td {
         padding: 16px;
         vertical-align: middle;
         color: #334155;
     }
+
     .btn-action-group {
         display: flex;
         gap: 6px;
     }
+
     .btn-sm {
         padding: 6px 14px;
         font-size: 0.875rem;
@@ -65,63 +74,77 @@
         font-weight: 500;
         transition: all 0.2s ease;
     }
+
     .btn-primary {
         background-color: #3b82f6;
         border: none;
         box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
     }
+
     .btn-primary:hover {
         background-color: #2563eb;
         transform: translateY(-1px);
         box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
     }
+
     .btn-info {
         background-color: #0ea5e9;
         border: none;
     }
+
     .btn-info:hover {
         background-color: #0284c7;
     }
+
     .btn-warning {
         background-color: #f59e0b;
         border: none;
         color: white;
     }
+
     .btn-warning:hover {
         background-color: #d97706;
         color: white;
     }
+
     .btn-danger {
         background-color: #ef4444;
         border: none;
     }
+
     .btn-danger:hover {
         background-color: #dc2626;
     }
+
     .alert {
         border-radius: 10px;
         border: none;
         padding: 16px 20px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
+
     .alert-success {
         background-color: #d1fae5;
         color: #065f46;
         border-left: 4px solid #10b981;
     }
+
     .badge {
         padding: 6px 12px;
         border-radius: 6px;
         font-weight: 600;
         font-size: 0.75rem;
     }
+
     .badge-stock {
         background-color: #dbeafe;
         color: #1e40af;
     }
+
     .stats-row {
         margin-bottom: 1.5rem;
     }
+
     .stat-card {
         background: white;
         border-radius: 12px;
@@ -130,28 +153,34 @@
         border: 1px solid #e5e7eb;
         transition: all 0.2s ease;
     }
+
     .stat-card:hover {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         transform: translateY(-2px);
     }
-    .stat-card.terlaris { 
-        border-left: 4px solid #f59e0b; 
+
+    .stat-card.terlaris {
+        border-left: 4px solid #f59e0b;
     }
-    .stat-card.stok-menipis { 
-        border-left: 4px solid #ef4444; 
+
+    .stat-card.stok-menipis {
+        border-left: 4px solid #ef4444;
     }
+
     .stat-number {
         font-size: 1.25rem;
         font-weight: 700;
         color: #1a1d29;
         margin: 0;
     }
+
     .stat-label {
         color: #6b7280;
         font-size: 0.875rem;
         margin: 0;
         font-weight: 600;
     }
+
     .stat-icon {
         width: 48px;
         height: 48px;
@@ -163,6 +192,7 @@
         font-size: 1.5rem;
         color: #6b7280;
     }
+
     .detail-card {
         background: white;
         border-radius: 12px;
@@ -170,6 +200,7 @@
         border: 1px solid #e5e7eb;
         overflow: hidden;
     }
+
     .detail-card-header {
         padding: 12px 16px;
         background-color: #f8fafc;
@@ -183,19 +214,23 @@
         font-size: 0.875rem;
         transition: all 0.2s ease;
     }
+
     .detail-card-header:hover {
         background-color: #f1f5f9;
     }
+
     .detail-card-body {
         padding: 16px;
         max-height: 250px;
         overflow-y: auto;
         transition: all 0.3s ease;
     }
+
     .detail-card-header i.fa-chevron-down,
     .detail-card-header i.fa-chevron-up {
         transition: transform 0.3s ease;
     }
+
     .detail-item {
         padding: 10px;
         margin-bottom: 8px;
@@ -203,12 +238,15 @@
         border-radius: 8px;
         transition: all 0.2s ease;
     }
+
     .detail-item:hover {
         background-color: #f1f5f9;
     }
+
     .detail-item:last-child {
         margin-bottom: 0;
     }
+
     .badge-rank-small {
         display: inline-block;
         width: 24px;
@@ -233,10 +271,10 @@
     </div>
 
     @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <i class="bi bi-check-circle me-2"></i>{{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="bi bi-check-circle me-2"></i>{{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     @endif
 
     <!-- Stats Cards -->
@@ -248,11 +286,11 @@
                     <div>
                         <p class="stat-label mb-2"><i class="fas fa-fire"></i> Barang Terlaris</p>
                         @if($barangTerlaris->count() > 0 && $barangTerlaris->first()->total_terjual > 0)
-                            <p class="stat-number mb-1">{{ $barangTerlaris->first()->nama_barang }}</p>
-                            <small class="text-muted">{{ $barangTerlaris->first()->total_terjual }} terjual • Stok: {{ $barangTerlaris->first()->stok }}</small>
+                        <p class="stat-number mb-1">{{ $barangTerlaris->first()->nama_barang }}</p>
+                        <small class="text-muted">{{ $barangTerlaris->first()->total_terjual }} terjual • Stok: {{ $barangTerlaris->first()->stok }}</small>
                         @else
-                            <p class="stat-number mb-1">-</p>
-                            <small class="text-muted">Belum ada penjualan</small>
+                        <p class="stat-number mb-1">-</p>
+                        <small class="text-muted">Belum ada penjualan</small>
                         @endif
                     </div>
                     <div class="stat-icon">
@@ -269,11 +307,11 @@
                     <div>
                         <p class="stat-label mb-2"><i class="fas fa-exclamation-triangle"></i> Stok Menipis</p>
                         @if($barangStokMenipis->count() > 0)
-                            <p class="stat-number mb-1">{{ $barangStokMenipis->count() }} Barang</p>
-                            <small class="text-muted">Perlu segera di-restock</small>
+                        <p class="stat-number mb-1">{{ $barangStokMenipis->count() }} Barang</p>
+                        <small class="text-muted">Perlu segera di-restock</small>
                         @else
-                            <p class="stat-number mb-1">0 Barang</p>
-                            <small class="text-muted">Semua stok aman</small>
+                        <p class="stat-number mb-1">0 Barang</p>
+                        <small class="text-muted">Semua stok aman</small>
                         @endif
                     </div>
                     <div class="stat-icon">
@@ -373,22 +411,22 @@
                     <td>
                         <div class="btn-action-group">
                             <a href="{{ route('barang.show', $b->id) }}"
-                               class="btn btn-sm btn-info text-white"
-                               title="Lihat Detail">
+                                class="btn btn-sm btn-info text-white"
+                                title="Lihat Detail">
                                 <i class="bi bi-eye"></i>
                             </a>
                             <a href="{{ route('barang.edit', $b->id) }}"
-                               class="btn btn-sm btn-warning"
-                               title="Edit">
+                                class="btn btn-sm btn-warning"
+                                title="Edit">
                                 <i class="bi bi-pencil"></i>
                             </a>
                             <form action="{{ route('barang.destroy', $b->id) }}"
-                                  method="POST" class="d-inline">
+                                method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-sm btn-danger"
-                                        onclick="return confirm('Yakin hapus data ini?')"
-                                        title="Hapus">
+                                    onclick="return confirm('Yakin hapus data ini?')"
+                                    title="Hapus">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </form>
@@ -408,9 +446,11 @@
                 justify-content: center;
                 align-items: center;
             }
+
             .pagination .page-item {
                 list-style: none;
             }
+
             .pagination .page-link {
                 padding: 10px 16px;
                 border-radius: 8px;
@@ -423,6 +463,7 @@
                 gap: 4px;
                 background-color: #ffffff;
             }
+
             .pagination .page-link:hover {
                 background-color: #f8fafc;
                 border-color: #3b82f6;
@@ -430,6 +471,7 @@
                 transform: translateY(-1px);
                 box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
             }
+
             .pagination .page-item.active .page-link {
                 background-color: #3b82f6;
                 border-color: #3b82f6;
@@ -437,12 +479,14 @@
                 font-weight: 600;
                 box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
             }
+
             .pagination .page-item.disabled .page-link {
                 background-color: #f1f5f9;
                 border-color: #e5e7eb;
                 color: #cbd5e1;
                 cursor: not-allowed;
             }
+
             .pagination .page-item.disabled .page-link:hover {
                 transform: none;
                 box-shadow: none;
@@ -454,30 +498,30 @@
 @stop
 
 @section('css')
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/admin-pro.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/admin-pro.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 @stop
 
 @section('js')
-    <script src="{{ asset('js/admin-pro.js') }}" defer></script>
-    <script>
-        // Toggle detail cards
-        function toggleDetail(id) {
-            const element = document.getElementById(id);
-            const icon = document.getElementById('icon-' + id);
-            
-            if (element.style.display === 'none') {
-                element.style.display = 'block';
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            } else {
-                element.style.display = 'none';
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
-            }
+<script src="{{ asset('js/admin-pro.js') }}" defer></script>
+<script>
+    // Toggle detail cards
+    function toggleDetail(id) {
+        const element = document.getElementById(id);
+        const icon = document.getElementById('icon-' + id);
+
+        if (element.style.display === 'none') {
+            element.style.display = 'block';
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        } else {
+            element.style.display = 'none';
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
         }
-    </script>
+    }
+</script>
 @stop
