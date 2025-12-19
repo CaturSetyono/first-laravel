@@ -1,0 +1,48 @@
+/* ============================================
+   PRELOADER - Lightweight Loading Animation
+   ============================================ */
+.preloader-pro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.preloader-pro.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,0.1);
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: preloader-spin 0.8s linear infinite;
+}
+
+@keyframes preloader-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Page Transition */
+.page-transition {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: pageLoad 0.3s ease forwards;
+}
+
+@keyframes pageLoad {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
