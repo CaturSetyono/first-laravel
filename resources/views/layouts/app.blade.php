@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +36,8 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             overflow-y: auto;
@@ -44,7 +46,11 @@
             color: var(--charcoal);
         }
 
-        h1, h2, h3, h4, h5 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: 'DM Serif Display', serif;
         }
 
@@ -671,6 +677,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -684,7 +691,7 @@
             <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">
                 <i class="bi bi-house-door-fill"></i> Dashboard
             </a>
-            
+
             <hr>
             <h6>Query Builder</h6>
             <a href="{{ url('db/bacaDb1') }}" class="{{ request()->is('db/bacaDb1') ? 'active' : '' }}">
@@ -693,13 +700,13 @@
             <a href="{{ url('db/selectData') }}" class="{{ request()->is('db/selectData') ? 'active' : '' }}">
                 <i class="bi bi-box-fill"></i> Product Data
             </a>
-            
+
             <hr>
             <h6>Book Catalog</h6>
             <a href="{{ route('buku.index') }}" class="{{ request()->routeIs('buku.*') ? 'active' : '' }}">
                 <i class="bi bi-book-fill"></i> Book List
             </a>
-            
+
             <hr>
             <h6>Sales Management</h6>
             <a href="{{ route('penjualan.index') }}" class="{{ request()->routeIs('penjualan.index') ? 'active' : '' }}">
@@ -708,7 +715,7 @@
             <a href="{{ route('penjualan.create') }}" class="{{ request()->routeIs('penjualan.create') ? 'active' : '' }}">
                 <i class="bi bi-plus-circle-fill"></i> New Transaction
             </a>
-            
+
             <hr>
             <h6>Master Data</h6>
             <a href="{{ route('jenis-barang.index') }}" class="{{ request()->routeIs('jenis-barang.*') ? 'active' : '' }}">
@@ -717,7 +724,7 @@
             <a href="{{ route('barang.index') }}" class="{{ request()->routeIs('barang.*') ? 'active' : '' }}">
                 <i class="bi bi-box-seam-fill"></i> Products
             </a>
-            
+
             <hr>
             <a href="#" onclick="return confirm('Are you sure you want to logout?')">
                 <i class="bi bi-box-arrow-right"></i> Logout
@@ -751,4 +758,5 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
