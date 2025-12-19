@@ -3,7 +3,7 @@
 @section('title', 'Pengaturan')
 
 @section('content_header')
-    <h1><i class="fas fa-cog"></i> Pengaturan</h1>
+<h1><i class="fas fa-cog"></i> Pengaturan</h1>
 @stop
 
 @section('content')
@@ -24,11 +24,11 @@
 
                     <ul class="list-group list-group-unbordered mb-3">
                         <li class="list-group-item">
-                            <b>Member Sejak</b> 
+                            <b>Member Sejak</b>
                             <span class="float-right">{{ Auth::user()->created_at->format('d M Y') }}</span>
                         </li>
                         <li class="list-group-item">
-                            <b>Terakhir Update</b> 
+                            <b>Terakhir Update</b>
                             <span class="float-right">{{ Auth::user()->updated_at->format('d M Y H:i') }}</span>
                         </li>
                     </ul>
