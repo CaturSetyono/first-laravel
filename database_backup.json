@@ -1,0 +1,722 @@
+{
+    "jenis_barang": [
+        {
+            "id": 1,
+            "nama_jenis": "Elektronik",
+            "kode_jenis": "ELK",
+            "deskripsi": "Barang-barang elektronik seperti handphone, laptop, TV, dll",
+            "aktif": 1,
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 2,
+            "nama_jenis": "Pakaian",
+            "kode_jenis": "PKN",
+            "deskripsi": "Pakaian pria, wanita, dan anak-anak",
+            "aktif": 1,
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 3,
+            "nama_jenis": "Makanan & Minuman",
+            "kode_jenis": "FNB",
+            "deskripsi": "Produk makanan dan minuman",
+            "aktif": 1,
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 4,
+            "nama_jenis": "Peralatan Rumah Tangga",
+            "kode_jenis": "HME",
+            "deskripsi": "Peralatan dan perlengkapan rumah tangga",
+            "aktif": 1,
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 5,
+            "nama_jenis": "Buku & Alat Tulis",
+            "kode_jenis": "BKS",
+            "deskripsi": "Buku, majalah, alat tulis, dan perlengkapan kantor",
+            "aktif": 1,
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 6,
+            "nama_jenis": "Olahraga & Outdoor",
+            "kode_jenis": "SPT",
+            "deskripsi": "Peralatan olahraga dan aktivitas outdoor",
+            "aktif": 1,
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 7,
+            "nama_jenis": "Kecantikan & Kesehatan",
+            "kode_jenis": "BTY",
+            "deskripsi": "Produk kecantikan, perawatan, dan kesehatan",
+            "aktif": 1,
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 8,
+            "nama_jenis": "Otomotif",
+            "kode_jenis": "OTO",
+            "deskripsi": "Spare part dan aksesoris kendaraan",
+            "aktif": 1,
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        }
+    ],
+    "barang": [
+        {
+            "id": 1001,
+            "jenis_barang": 1,
+            "nama_barang": "Laptop ASUS ROG",
+            "satuan": "Unit",
+            "harga_pokok": 12000000,
+            "harga_jual": 15000000,
+            "stok": -11,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 1002,
+            "jenis_barang": 1,
+            "nama_barang": "Samsung Galaxy S23",
+            "satuan": "Unit",
+            "harga_pokok": 8000000,
+            "harga_jual": 10000000,
+            "stok": 24,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 1003,
+            "jenis_barang": 1,
+            "nama_barang": "Smart TV LG 43 Inch",
+            "satuan": "Unit",
+            "harga_pokok": 4500000,
+            "harga_jual": 5500000,
+            "stok": 12,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 2001,
+            "jenis_barang": 2,
+            "nama_barang": "Kemeja Batik Pria",
+            "satuan": "Pcs",
+            "harga_pokok": 150000,
+            "harga_jual": 250000,
+            "stok": -50,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 2002,
+            "jenis_barang": 2,
+            "nama_barang": "Dress Wanita",
+            "satuan": "Pcs",
+            "harga_pokok": 200000,
+            "harga_jual": 350000,
+            "stok": -10,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 2003,
+            "jenis_barang": 2,
+            "nama_barang": "Kaos Anak",
+            "satuan": "Pcs",
+            "harga_pokok": 50000,
+            "harga_jual": 100000,
+            "stok": 100,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 3001,
+            "jenis_barang": 3,
+            "nama_barang": "Kopi Arabica 250gr",
+            "satuan": "Pack",
+            "harga_pokok": 50000,
+            "harga_jual": 75000,
+            "stok": 80,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 3002,
+            "jenis_barang": 3,
+            "nama_barang": "Keripik Singkong",
+            "satuan": "Pack",
+            "harga_pokok": 15000,
+            "harga_jual": 25000,
+            "stok": 120,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 3003,
+            "jenis_barang": 3,
+            "nama_barang": "Susu UHT 1 Liter",
+            "satuan": "Botol",
+            "harga_pokok": 12000,
+            "harga_jual": 18000,
+            "stok": 150,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 4001,
+            "jenis_barang": 4,
+            "nama_barang": "Blender Philips",
+            "satuan": "Unit",
+            "harga_pokok": 350000,
+            "harga_jual": 500000,
+            "stok": 20,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 4002,
+            "jenis_barang": 4,
+            "nama_barang": "Panci Set Stainless",
+            "satuan": "Set",
+            "harga_pokok": 200000,
+            "harga_jual": 300000,
+            "stok": 30,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 5001,
+            "jenis_barang": 5,
+            "nama_barang": "Buku Tulis 100 Lembar",
+            "satuan": "Pcs",
+            "harga_pokok": 8000,
+            "harga_jual": 12000,
+            "stok": 200,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 5002,
+            "jenis_barang": 5,
+            "nama_barang": "Pulpen Joyko 0.5mm",
+            "satuan": "Pcs",
+            "harga_pokok": 2000,
+            "harga_jual": 4000,
+            "stok": 300,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 5003,
+            "jenis_barang": 5,
+            "nama_barang": "Novel Best Seller",
+            "satuan": "Pcs",
+            "harga_pokok": 60000,
+            "harga_jual": 90000,
+            "stok": 45,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 6001,
+            "jenis_barang": 6,
+            "nama_barang": "Sepatu Lari Nike",
+            "satuan": "Pasang",
+            "harga_pokok": 800000,
+            "harga_jual": 1200000,
+            "stok": 35,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 6002,
+            "jenis_barang": 6,
+            "nama_barang": "Raket Badminton Yonex",
+            "satuan": "Unit",
+            "harga_pokok": 400000,
+            "harga_jual": 600000,
+            "stok": 25,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 7001,
+            "jenis_barang": 7,
+            "nama_barang": "Wardah Lightening Serum",
+            "satuan": "Botol",
+            "harga_pokok": 50000,
+            "harga_jual": 75000,
+            "stok": 60,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 7002,
+            "jenis_barang": 7,
+            "nama_barang": "Masker Wajah Korea",
+            "satuan": "Pack",
+            "harga_pokok": 15000,
+            "harga_jual": 25000,
+            "stok": 150,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 8001,
+            "jenis_barang": 8,
+            "nama_barang": "Oli Mobil Shell 4L",
+            "satuan": "Gallon",
+            "harga_pokok": 200000,
+            "harga_jual": 280000,
+            "stok": 50,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 8002,
+            "jenis_barang": 8,
+            "nama_barang": "Ban Motor FDR",
+            "satuan": "Unit",
+            "harga_pokok": 250000,
+            "harga_jual": 350000,
+            "stok": 40,
+            "create_at": "2025-11-12 03:54:27",
+            "update_at": "2025-11-12 03:54:27"
+        }
+    ],
+    "pelanggan": [
+        {
+            "id": 1,
+            "nama_pelanggan": "Ahmad Rizki",
+            "jenis_kelamin": "L",
+            "alamat": "Jl. Merdeka No. 10, Yogyakarta",
+            "telp_hp": "081234567890",
+            "email": "ahmad.rizki@email.com",
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 2,
+            "nama_pelanggan": "Siti Nurhaliza",
+            "jenis_kelamin": "P",
+            "alamat": "Jl. Sudirman No. 25, Bantul",
+            "telp_hp": "081298765432",
+            "email": "siti.nur@email.com",
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 3,
+            "nama_pelanggan": "Budi Santoso",
+            "jenis_kelamin": "L",
+            "alamat": "Jl. Gajah Mada No. 5, Sleman",
+            "telp_hp": "081345678901",
+            "email": "budi.santoso@email.com",
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 4,
+            "nama_pelanggan": "Dewi Lestari",
+            "jenis_kelamin": "P",
+            "alamat": "Jl. Ahmad Yani No. 15, Yogyakarta",
+            "telp_hp": "081456789012",
+            "email": "dewi.lestari@email.com",
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        },
+        {
+            "id": 5,
+            "nama_pelanggan": "Eko Prasetyo",
+            "jenis_kelamin": "L",
+            "alamat": "Jl. Malioboro No. 100, Yogyakarta",
+            "telp_hp": "081567890123",
+            "email": "eko.prasetyo@email.com",
+            "created_at": "2025-11-12 03:54:27",
+            "updated_at": "2025-11-12 03:54:27"
+        }
+    ],
+    "kota": [
+        {
+            "id": 1,
+            "nama_kota": "Jakarta",
+            "propinsi_id": 1,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 2,
+            "nama_kota": "Bandung",
+            "propinsi_id": 1,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 3,
+            "nama_kota": "Surabaya",
+            "propinsi_id": 2,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 4,
+            "nama_kota": "Yogyakarta",
+            "propinsi_id": 3,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 5,
+            "nama_kota": "Malang",
+            "propinsi_id": 2,
+            "created_at": null,
+            "updated_at": null
+        }
+    ],
+    "pengarang": [
+        {
+            "id": 1,
+            "nama_pengarang": "Andrea Hirata",
+            "bio": "Penulis Laskar Pelangi",
+            "negara": "Indonesia",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 2,
+            "nama_pengarang": "Tere Liye",
+            "bio": "Penulis Novel Bumi Series",
+            "negara": "Indonesia",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 3,
+            "nama_pengarang": "Dee Lestari",
+            "bio": "Penulis Supernova & Perahu Kertas",
+            "negara": "Indonesia",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 4,
+            "nama_pengarang": "Raditya Dika",
+            "bio": "Penulis Komedi",
+            "negara": "Indonesia",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 5,
+            "nama_pengarang": "Pidi Baiq",
+            "bio": "Penulis Dilan Series",
+            "negara": "Indonesia",
+            "created_at": null,
+            "updated_at": null
+        }
+    ],
+    "buku": [
+        {
+            "id": 1,
+            "judul": "Laskar Pelangi",
+            "pengarang_id": 1,
+            "isbn": "978-979-22-2890-5",
+            "tahun_terbit": "2005",
+            "jumlah_halaman": 529,
+            "penerbit": "Bentang Pustaka",
+            "harga": "75000.00",
+            "stok": 50,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 2,
+            "judul": "Bumi",
+            "pengarang_id": 2,
+            "isbn": "978-602-03-0213-4",
+            "tahun_terbit": "2014",
+            "jumlah_halaman": 440,
+            "penerbit": "Gramedia Pustaka Utama",
+            "harga": "95000.00",
+            "stok": 40,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 3,
+            "judul": "Bulan",
+            "pengarang_id": 2,
+            "isbn": "978-602-03-1681-0",
+            "tahun_terbit": "2015",
+            "jumlah_halaman": 400,
+            "penerbit": "Gramedia Pustaka Utama",
+            "harga": "98000.00",
+            "stok": 35,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 4,
+            "judul": "Perahu Kertas",
+            "pengarang_id": 3,
+            "isbn": "978-979-22-4721-0",
+            "tahun_terbit": "2009",
+            "jumlah_halaman": 456,
+            "penerbit": "Bentang Pustaka",
+            "harga": "85000.00",
+            "stok": 45,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 5,
+            "judul": "Kambing Jantan",
+            "pengarang_id": 4,
+            "isbn": "978-979-1227-63-2",
+            "tahun_terbit": "2005",
+            "jumlah_halaman": 176,
+            "penerbit": "Gagas Media",
+            "harga": "55000.00",
+            "stok": 60,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 6,
+            "judul": "Dilan 1990",
+            "pengarang_id": 5,
+            "isbn": "978-602-385-009-8",
+            "tahun_terbit": "2014",
+            "jumlah_halaman": 332,
+            "penerbit": "Pastel Books",
+            "harga": "65000.00",
+            "stok": 70,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 7,
+            "judul": "Dilan 1991",
+            "pengarang_id": 5,
+            "isbn": "978-602-385-033-3",
+            "tahun_terbit": "2015",
+            "jumlah_halaman": 344,
+            "penerbit": "Pastel Books",
+            "harga": "68000.00",
+            "stok": 55,
+            "created_at": null,
+            "updated_at": null
+        }
+    ],
+    "jual": [
+        {
+            "id": 5,
+            "pelanggan_id": null,
+            "no_transaksi": "TRX-20251112-0005",
+            "tanggal": "2025-11-12",
+            "user_id": 2,
+            "jumlah_pembelian": null,
+            "nama_pembeli": "-",
+            "alamat": null,
+            "telepon": null,
+            "total": "0.00",
+            "status": "pending",
+            "created_at": "2025-11-12 04:01:09",
+            "updated_at": "2025-11-12 04:01:09"
+        },
+        {
+            "id": 6,
+            "pelanggan_id": 1,
+            "no_transaksi": "TRX-20251112-0006",
+            "tanggal": "2025-11-12",
+            "user_id": 2,
+            "jumlah_pembelian": null,
+            "nama_pembeli": "Ahmad Rizki",
+            "alamat": "Jl. Merdeka No. 10, Yogyakarta",
+            "telepon": "081234567890",
+            "total": "0.00",
+            "status": "pending",
+            "created_at": "2025-11-12 04:01:10",
+            "updated_at": "2025-11-12 04:01:14"
+        },
+        {
+            "id": 7,
+            "pelanggan_id": 1,
+            "no_transaksi": "TRX-20251112-0007",
+            "tanggal": "2025-11-12",
+            "user_id": 2,
+            "jumlah_pembelian": 150000000,
+            "nama_pembeli": "Ahmad Rizki",
+            "alamat": "Jl. Merdeka No. 10, Yogyakarta",
+            "telepon": "081234567890",
+            "total": "0.00",
+            "status": "pending",
+            "created_at": "2025-11-12 04:02:38",
+            "updated_at": "2025-11-12 04:10:02"
+        },
+        {
+            "id": 8,
+            "pelanggan_id": null,
+            "no_transaksi": "TRX-20251112-0008",
+            "tanggal": "2025-11-12",
+            "user_id": 2,
+            "jumlah_pembelian": null,
+            "nama_pembeli": "-",
+            "alamat": null,
+            "telepon": null,
+            "total": "0.00",
+            "status": "pending",
+            "created_at": "2025-11-12 04:10:18",
+            "updated_at": "2025-11-12 04:10:18"
+        },
+        {
+            "id": 10,
+            "pelanggan_id": 1,
+            "no_transaksi": "TRX-20251112-0010",
+            "tanggal": "2025-11-12",
+            "user_id": 2,
+            "jumlah_pembelian": 15000000,
+            "nama_pembeli": "Ahmad Rizki",
+            "alamat": "Jl. Merdeka No. 10, Yogyakarta",
+            "telepon": "081234567890",
+            "total": "0.00",
+            "status": "pending",
+            "created_at": "2025-11-12 04:15:16",
+            "updated_at": "2025-11-12 04:15:46"
+        },
+        {
+            "id": 13,
+            "pelanggan_id": 1,
+            "no_transaksi": "TRX-20251126-0003",
+            "tanggal": "2025-11-26",
+            "user_id": 2,
+            "jumlah_pembelian": 176500000,
+            "nama_pembeli": "Ahmad Rizki",
+            "alamat": "Jl. Merdeka No. 10, Yogyakarta",
+            "telepon": "081234567890",
+            "total": "0.00",
+            "status": "pending",
+            "created_at": "2025-11-26 06:38:59",
+            "updated_at": "2025-11-26 06:41:49"
+        },
+        {
+            "id": 16,
+            "pelanggan_id": 2,
+            "no_transaksi": "TRX-20251203-0001",
+            "tanggal": "2025-12-03",
+            "user_id": 2,
+            "jumlah_pembelian": 42500000,
+            "nama_pembeli": "Siti Nurhaliza",
+            "alamat": "Jl. Sudirman No. 25, Bantul",
+            "telepon": "081298765432",
+            "total": "0.00",
+            "status": "pending",
+            "created_at": "2025-12-03 10:22:10",
+            "updated_at": "2025-12-03 10:23:03"
+        }
+    ],
+    "detail_jual": [
+        {
+            "id": 1,
+            "jual_id": 7,
+            "barang_id": 1001,
+            "qty": 10,
+            "harga_sekarang": 15000000,
+            "jumlah": 10,
+            "harga": "15000000.00",
+            "subtotal": "150000000.00",
+            "user_id": 2,
+            "created_at": "2025-11-12 04:10:02",
+            "updated_at": "2025-11-12 04:10:02"
+        },
+        {
+            "id": 2,
+            "jual_id": 10,
+            "barang_id": 1001,
+            "qty": 1,
+            "harga_sekarang": 15000000,
+            "jumlah": 1,
+            "harga": "15000000.00",
+            "subtotal": "15000000.00",
+            "user_id": 2,
+            "created_at": "2025-11-12 04:15:46",
+            "updated_at": "2025-11-12 04:15:46"
+        },
+        {
+            "id": 3,
+            "jual_id": 13,
+            "barang_id": 1001,
+            "qty": 10,
+            "harga_sekarang": 15000000,
+            "jumlah": 10,
+            "harga": "15000000.00",
+            "subtotal": "150000000.00",
+            "user_id": 2,
+            "created_at": "2025-11-26 06:41:49",
+            "updated_at": "2025-11-26 06:41:49"
+        },
+        {
+            "id": 4,
+            "jual_id": 13,
+            "barang_id": 1002,
+            "qty": 1,
+            "harga_sekarang": 10000000,
+            "jumlah": 1,
+            "harga": "10000000.00",
+            "subtotal": "10000000.00",
+            "user_id": 2,
+            "created_at": "2025-11-26 06:41:49",
+            "updated_at": "2025-11-26 06:41:49"
+        },
+        {
+            "id": 5,
+            "jual_id": 13,
+            "barang_id": 1003,
+            "qty": 3,
+            "harga_sekarang": 5500000,
+            "jumlah": 3,
+            "harga": "5500000.00",
+            "subtotal": "16500000.00",
+            "user_id": 2,
+            "created_at": "2025-11-26 06:41:49",
+            "updated_at": "2025-11-26 06:41:49"
+        },
+        {
+            "id": 6,
+            "jual_id": 16,
+            "barang_id": 2001,
+            "qty": 100,
+            "harga_sekarang": 250000,
+            "jumlah": 100,
+            "harga": "250000.00",
+            "subtotal": "25000000.00",
+            "user_id": 2,
+            "created_at": "2025-12-03 10:23:03",
+            "updated_at": "2025-12-03 10:23:03"
+        },
+        {
+            "id": 7,
+            "jual_id": 16,
+            "barang_id": 2002,
+            "qty": 50,
+            "harga_sekarang": 350000,
+            "jumlah": 50,
+            "harga": "350000.00",
+            "subtotal": "17500000.00",
+            "user_id": 2,
+            "created_at": "2025-12-03 10:23:03",
+            "updated_at": "2025-12-03 10:23:03"
+        }
+    ]
+}
