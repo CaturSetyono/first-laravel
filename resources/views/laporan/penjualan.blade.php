@@ -3,7 +3,7 @@
 @section('title', 'Laporan Penjualan')
 
 @section('content_header')
-    <h1><i class="fas fa-file-invoice-dollar"></i> Laporan Penjualan</h1>
+<h1><i class="fas fa-file-invoice-dollar"></i> Laporan Penjualan</h1>
 @stop
 
 @section('content')
@@ -13,26 +13,38 @@
         border-radius: 8px;
         padding: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
+
     .summary-row {
         display: flex;
         gap: 15px;
         margin-bottom: 20px;
         flex-wrap: wrap;
     }
+
     .summary-box {
         flex: 1;
         min-width: 200px;
         background: #fff;
         border-radius: 8px;
         padding: 20px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         border-left: 4px solid #6c757d;
     }
-    .summary-box.primary { border-left-color: #007bff; }
-    .summary-box.success { border-left-color: #28a745; }
-    .summary-box.info { border-left-color: #17a2b8; }
+
+    .summary-box.primary {
+        border-left-color: #007bff;
+    }
+
+    .summary-box.success {
+        border-left-color: #28a745;
+    }
+
+    .summary-box.info {
+        border-left-color: #17a2b8;
+    }
+
     .summary-box .label {
         font-size: 12px;
         color: #6c757d;
@@ -40,17 +52,20 @@
         letter-spacing: 0.5px;
         margin-bottom: 5px;
     }
+
     .summary-box .value {
         font-size: 24px;
         font-weight: 700;
         color: #333;
     }
+
     .report-card {
         background: #fff;
         border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         overflow: hidden;
     }
+
     .report-card .card-header {
         background: #f8f9fa;
         padding: 15px 20px;
@@ -59,31 +74,37 @@
         justify-content: space-between;
         align-items: center;
     }
+
     .report-card .card-header h5 {
         margin: 0;
         font-weight: 600;
         color: #333;
     }
+
     .report-card .card-body {
         padding: 20px;
     }
+
     .report-card .card-footer {
         background: #f8f9fa;
         padding: 15px 20px;
         border-top: 1px solid #e9ecef;
     }
-    
+
     /* Report Table Styles */
     .report-table {
         width: 100%;
         border-collapse: collapse;
         font-size: 12px;
     }
-    .report-table th, .report-table td {
+
+    .report-table th,
+    .report-table td {
         border: 1px solid #dee2e6;
         padding: 8px 10px;
         vertical-align: middle;
     }
+
     .report-table thead th {
         background: #343a40;
         color: #fff;
@@ -92,34 +113,49 @@
         font-size: 11px;
         text-transform: uppercase;
     }
+
     .report-table tbody td {
         background: #fff;
     }
+
     .report-table tbody tr:nth-child(even) td {
         background: #f8f9fa;
     }
+
     .report-table tbody tr:hover td {
         background: #e9ecef;
     }
-    .report-table .text-right { text-align: right; }
-    .report-table .text-center { text-align: center; }
-    .report-table .text-left { text-align: left; }
+
+    .report-table .text-right {
+        text-align: right;
+    }
+
+    .report-table .text-center {
+        text-align: center;
+    }
+
+    .report-table .text-left {
+        text-align: left;
+    }
+
     .report-table tfoot td {
         background: #e9ecef !important;
         font-weight: 700;
     }
-    
+
     /* Detail Items */
     .detail-row td {
         padding: 0 !important;
         border-top: none !important;
     }
+
     .detail-table {
         width: 100%;
         border-collapse: collapse;
         font-size: 11px;
         margin: 0;
     }
+
     .detail-table th {
         background: #6c757d;
         color: #fff;
@@ -127,28 +163,33 @@
         font-weight: 500;
         text-align: center;
     }
+
     .detail-table td {
         padding: 5px 8px;
         border-bottom: 1px dashed #dee2e6;
     }
+
     .detail-table tr:last-child td {
         border-bottom: none;
     }
-    
+
     .empty-state {
         padding: 60px 20px;
         text-align: center;
         color: #6c757d;
     }
+
     .empty-state i {
         font-size: 48px;
         margin-bottom: 15px;
         opacity: 0.5;
     }
+
     .btn-group-action .btn {
         padding: 6px 12px;
         font-size: 13px;
     }
+
     .period-info {
         background: #e9ecef;
         padding: 8px 15px;
@@ -158,7 +199,7 @@
         display: inline-block;
         margin-bottom: 15px;
     }
-    
+
     /* Toggle Detail */
     .btn-toggle-detail {
         background: none;
@@ -168,16 +209,19 @@
         font-size: 14px;
         padding: 0;
     }
+
     .btn-toggle-detail:hover {
         color: #0056b3;
     }
+
     .detail-row {
         display: none;
     }
+
     .detail-row.show {
         display: table-row;
     }
-    
+
     /* Pagination Styles */
     .pagination-wrapper {
         display: flex;
@@ -186,15 +230,18 @@
         flex-wrap: wrap;
         gap: 15px;
     }
+
     .pagination-info {
         font-size: 13px;
         color: #6c757d;
     }
+
     .pagination {
         margin: 0;
         display: flex;
         gap: 5px;
     }
+
     .pagination .page-item .page-link {
         border-radius: 6px;
         border: 1px solid #dee2e6;
@@ -202,18 +249,21 @@
         padding: 8px 12px;
         font-size: 13px;
     }
+
     .pagination .page-item.active .page-link {
         background: #007bff;
         border-color: #007bff;
         color: #fff;
     }
+
     .pagination .page-item.disabled .page-link {
         color: #adb5bd;
     }
+
     .pagination .page-item .page-link:hover {
         background: #e9ecef;
     }
-    
+
     /* Status Badge */
     .badge-status {
         padding: 3px 8px;
@@ -221,21 +271,70 @@
         font-size: 10px;
         font-weight: 600;
     }
-    .badge-pending { background: #fff3cd; color: #856404; }
-    .badge-proses { background: #cce5ff; color: #004085; }
-    .badge-selesai { background: #d4edda; color: #155724; }
-    .badge-batal { background: #f8d7da; color: #721c24; }
-    
+
+    .badge-pending {
+        background: #fff3cd;
+        color: #856404;
+    }
+
+    .badge-proses {
+        background: #cce5ff;
+        color: #004085;
+    }
+
+    .badge-selesai {
+        background: #d4edda;
+        color: #155724;
+    }
+
+    .badge-batal {
+        background: #f8d7da;
+        color: #721c24;
+    }
+
     @media print {
-        .no-print { display: none !important; }
-        .content-wrapper { margin: 0 !important; padding: 0 !important; }
-        .main-sidebar, .main-header, .main-footer { display: none !important; }
-        .report-card { box-shadow: none; border: none; }
-        .summary-box { box-shadow: none; border: 1px solid #ddd; }
-        .card-footer { display: none !important; }
-        .report-table thead th { background: #333 !important; -webkit-print-color-adjust: exact; }
-        .detail-table th { background: #666 !important; -webkit-print-color-adjust: exact; }
-        .detail-row.show { display: table-row !important; }
+        .no-print {
+            display: none !important;
+        }
+
+        .content-wrapper {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .main-sidebar,
+        .main-header,
+        .main-footer {
+            display: none !important;
+        }
+
+        .report-card {
+            box-shadow: none;
+            border: none;
+        }
+
+        .summary-box {
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+
+        .card-footer {
+            display: none !important;
+        }
+
+        .report-table thead th {
+            background: #333 !important;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .detail-table th {
+            background: #666 !important;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .detail-row.show {
+            display: table-row !important;
+        }
     }
 </style>
 
@@ -257,7 +356,7 @@
                     <select name="barang_id" class="form-control">
                         <option value="">Semua Barang</option>
                         @foreach($barang as $b)
-                            <option value="{{ $b->id }}" {{ request('barang_id') == $b->id ? 'selected' : '' }}>{{ $b->nama_barang }}</option>
+                        <option value="{{ $b->id }}" {{ request('barang_id') == $b->id ? 'selected' : '' }}>{{ $b->nama_barang }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -277,11 +376,11 @@
     <div class="period-info no-print">
         <i class="fas fa-calendar-alt"></i>
         @if(request('tanggal_mulai') && request('tanggal_akhir'))
-            Periode: {{ date('d M Y', strtotime(request('tanggal_mulai'))) }} - {{ date('d M Y', strtotime(request('tanggal_akhir'))) }}
+        Periode: {{ date('d M Y', strtotime(request('tanggal_mulai'))) }} - {{ date('d M Y', strtotime(request('tanggal_akhir'))) }}
         @elseif(request('tanggal_mulai'))
-            Dari: {{ date('d M Y', strtotime(request('tanggal_mulai'))) }}
+        Dari: {{ date('d M Y', strtotime(request('tanggal_mulai'))) }}
         @else
-            Sampai: {{ date('d M Y', strtotime(request('tanggal_akhir'))) }}
+        Sampai: {{ date('d M Y', strtotime(request('tanggal_akhir'))) }}
         @endif
     </div>
     @endif
@@ -310,7 +409,7 @@
         </div>
         <div class="card-body">
             @if($penjualan->count() > 0)
-            
+
             <!-- Print Header -->
             <div class="d-none d-print-block text-center mb-4">
                 <h4 style="margin-bottom: 5px; font-weight: bold;">TOKO SERBA ADA</h4>
@@ -318,13 +417,13 @@
                 <h5 style="margin: 15px 0 5px 0; font-weight: bold; text-decoration: underline;">LAPORAN PENJUALAN</h5>
                 <p style="font-size: 12px;">
                     @if(request('tanggal_mulai') && request('tanggal_akhir'))
-                        Periode: {{ date('d/m/Y', strtotime(request('tanggal_mulai'))) }} s/d {{ date('d/m/Y', strtotime(request('tanggal_akhir'))) }}
+                    Periode: {{ date('d/m/Y', strtotime(request('tanggal_mulai'))) }} s/d {{ date('d/m/Y', strtotime(request('tanggal_akhir'))) }}
                     @else
-                        Tanggal Cetak: {{ date('d/m/Y H:i') }}
+                    Tanggal Cetak: {{ date('d/m/Y H:i') }}
                     @endif
                 </p>
             </div>
-            
+
             <div class="table-responsive">
                 <table class="report-table">
                     <thead>
@@ -401,7 +500,7 @@
                     </tfoot>
                 </table>
             </div>
-            
+
             <!-- Print Footer -->
             <div class="d-none d-print-block mt-4">
                 <div class="row">
@@ -416,7 +515,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Pagination -->
             @if($penjualan->hasPages())
             <div class="card-footer no-print">
@@ -428,7 +527,7 @@
                 </div>
             </div>
             @endif
-            
+
             @else
             <div class="empty-state">
                 <i class="fas fa-inbox"></i>
@@ -441,27 +540,27 @@
 </div>
 
 <script>
-function toggleDetail(id) {
-    const detailRow = document.getElementById('detail-' + id);
-    const icon = document.getElementById('icon-' + id);
-    
-    if (detailRow.classList.contains('show')) {
-        detailRow.classList.remove('show');
-        icon.classList.remove('fa-chevron-up');
-        icon.classList.add('fa-chevron-down');
-    } else {
-        detailRow.classList.add('show');
-        icon.classList.remove('fa-chevron-down');
-        icon.classList.add('fa-chevron-up');
-    }
-}
+    function toggleDetail(id) {
+        const detailRow = document.getElementById('detail-' + id);
+        const icon = document.getElementById('icon-' + id);
 
-// Expand all details when printing
-window.onbeforeprint = function() {
-    document.querySelectorAll('.detail-row').forEach(function(row) {
-        row.classList.add('show');
-    });
-};
+        if (detailRow.classList.contains('show')) {
+            detailRow.classList.remove('show');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        } else {
+            detailRow.classList.add('show');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        }
+    }
+
+    // Expand all details when printing
+    window.onbeforeprint = function() {
+        document.querySelectorAll('.detail-row').forEach(function(row) {
+            row.classList.add('show');
+        });
+    };
 </script>
 @stop
 
