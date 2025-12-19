@@ -117,17 +117,17 @@
                 </div>
                 <div class="card-body-modern">
                     @if($barangTerlaris->count() > 0 && $barangTerlaris->first()->total_terjual > 0)
-                        @foreach($barangTerlaris as $index => $item)
-                            @if($item->total_terjual > 0)
-                            <div class="bestseller-item">
-                                <div class="d-flex align-items-center">
-                                    <div class="bestseller-rank {{ $index == 0 ? 'gold' : ($index == 1 ? 'silver' : ($index == 2 ? 'bronze' : '')) }}">{{ $index + 1 }}</div>
-                                    <span style="font-weight:500;color:#1f2937">{{ $item->nama_barang }}</span>
-                                </div>
-                                <span class="bestseller-sold">{{ $item->total_terjual }} terjual</span>
-                            </div>
-                            @endif
-                        @endforeach
+                    @foreach($barangTerlaris as $index => $item)
+                    @if($item->total_terjual > 0)
+                    <div class="bestseller-item">
+                        <div class="d-flex align-items-center">
+                            <div class="bestseller-rank {{ $index == 0 ? 'gold' : ($index == 1 ? 'silver' : ($index == 2 ? 'bronze' : '')) }}">{{ $index + 1 }}</div>
+                            <span style="font-weight:500;color:#1f2937">{{ $item->nama_barang }}</span>
+                        </div>
+                        <span class="bestseller-sold">{{ $item->total_terjual }} terjual</span>
+                    </div>
+                    @endif
+                    @endforeach
                     @else
                     <div class="empty-state">
                         <i class="fas fa-chart-bar"></i>
@@ -148,7 +148,12 @@
                 <div class="card-body-modern p-0">
                     @if($transaksiTerbaru->count() > 0)
                     <table class="table-modern">
-                        <thead><tr><th>ID Transaksi</th><th class="text-right">Total</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>ID Transaksi</th>
+                                <th class="text-right">Total</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             @foreach($transaksiTerbaru as $trx)
                             <tr>
@@ -162,7 +167,9 @@
                         </tbody>
                     </table>
                     @else
-                    <div class="empty-state"><i class="fas fa-inbox"></i><p>Belum ada transaksi</p></div>
+                    <div class="empty-state"><i class="fas fa-inbox"></i>
+                        <p>Belum ada transaksi</p>
+                    </div>
                     @endif
                 </div>
             </div>
