@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,13 +30,13 @@
             --terracotta: #C65D3B;
             --navy: #1E3A5F;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Space Grotesk', sans-serif;
             background-color: var(--cream);
@@ -44,7 +45,10 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'DM Serif Display', serif;
         }
 
@@ -74,7 +78,7 @@
             justify-content: space-between;
             align-items: stretch;
         }
-        
+
         .navbar-brand-retro {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.8rem;
@@ -95,7 +99,7 @@
             background-color: var(--burgundy-light);
             color: var(--cream) !important;
         }
-        
+
         .brand-icon-retro {
             width: 40px;
             height: 40px;
@@ -108,12 +112,12 @@
             font-size: 1.2rem;
             transform: rotate(-5deg);
         }
-        
+
         .nav-links-retro {
             display: flex;
             align-items: stretch;
         }
-        
+
         .nav-link-retro {
             color: var(--cream-dark) !important;
             font-weight: 500;
@@ -127,12 +131,12 @@
             display: flex;
             align-items: center;
         }
-        
+
         .nav-link-retro:hover {
             color: var(--mustard) !important;
             background-color: var(--charcoal-light);
         }
-        
+
         .btn-login-retro {
             background-color: var(--teal);
             color: var(--cream) !important;
@@ -149,12 +153,12 @@
             clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%);
             padding-left: 45px !important;
         }
-        
+
         .btn-login-retro:hover {
             background-color: var(--teal-light);
             color: var(--cream) !important;
         }
-        
+
         /* ========== HERO SECTION - Full Width Centered Design ========== */
         .hero-retro {
             min-height: 100vh;
@@ -232,7 +236,7 @@
         .hero-badge-retro i {
             color: var(--mustard);
         }
-        
+
         .hero-title-retro {
             font-family: 'DM Serif Display', serif;
             font-size: 4.5rem;
@@ -243,7 +247,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .hero-title-retro .highlight {
             color: var(--burgundy);
             font-style: italic;
@@ -261,7 +265,7 @@
             opacity: 0.4;
             z-index: -1;
         }
-        
+
         .hero-subtitle-retro {
             font-size: 1.1rem;
             color: var(--charcoal);
@@ -271,7 +275,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .hero-buttons-retro {
             display: flex;
             gap: 15px;
@@ -279,7 +283,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .btn-primary-retro {
             background-color: var(--burgundy);
             color: var(--cream);
@@ -305,21 +309,21 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s ease;
         }
 
         .btn-primary-retro:hover::before {
             left: 100%;
         }
-        
+
         .btn-primary-retro:hover {
             background-color: var(--burgundy-dark);
             color: var(--cream);
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(139, 41, 66, 0.3);
         }
-        
+
         .btn-secondary-retro {
             background-color: transparent;
             color: var(--charcoal);
@@ -335,7 +339,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         .btn-secondary-retro:hover {
             background-color: var(--charcoal);
             color: var(--cream);
@@ -430,7 +434,7 @@
             right: -20px;
             width: 60px;
             height: 60px;
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
         }
 
@@ -479,15 +483,13 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--burgundy) 0px,
-                var(--burgundy) 30px,
-                var(--mustard) 30px,
-                var(--mustard) 60px,
-                var(--teal) 60px,
-                var(--teal) 90px
-            );
+            background: repeating-linear-gradient(90deg,
+                    var(--burgundy) 0px,
+                    var(--burgundy) 30px,
+                    var(--mustard) 30px,
+                    var(--mustard) 60px,
+                    var(--teal) 60px,
+                    var(--teal) 90px);
         }
 
         .section-header-retro {
@@ -507,14 +509,14 @@
             margin-bottom: 20px;
             transform: rotate(-2deg);
         }
-        
+
         .section-title-retro {
             font-family: 'DM Serif Display', serif;
             font-size: 3.2rem;
             margin-bottom: 15px;
             color: var(--charcoal);
         }
-        
+
         .section-subtitle-retro {
             color: var(--charcoal);
             opacity: 0.7;
@@ -522,7 +524,7 @@
             margin: 0 auto;
             font-size: 1.05rem;
         }
-        
+
         .feature-card-retro {
             background-color: var(--cream);
             padding: 40px;
@@ -566,7 +568,7 @@
             background-color: var(--mustard);
             color: var(--charcoal);
         }
-        
+
         .feature-icon-retro {
             width: 70px;
             height: 70px;
@@ -580,7 +582,7 @@
             transform: rotate(-5deg);
             transition: all 0.3s ease;
         }
-        
+
         .feature-title-retro {
             font-family: 'DM Serif Display', serif;
             font-size: 1.5rem;
@@ -588,7 +590,7 @@
             color: var(--charcoal);
             transition: color 0.3s ease;
         }
-        
+
         .feature-desc-retro {
             color: var(--charcoal);
             opacity: 0.8;
@@ -709,7 +711,7 @@
             opacity: 0.7;
             font-size: 0.9rem;
         }
-        
+
         /* ========== MARQUEE STATS BANNER - Infinite Scroll ========== */
         .marquee-section {
             background-color: var(--charcoal);
@@ -759,6 +761,7 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
@@ -830,15 +833,13 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--teal) 0px,
-                var(--teal) 30px,
-                var(--mustard) 30px,
-                var(--mustard) 60px,
-                var(--burgundy) 60px,
-                var(--burgundy) 90px
-            );
+            background: repeating-linear-gradient(90deg,
+                    var(--teal) 0px,
+                    var(--teal) 30px,
+                    var(--mustard) 30px,
+                    var(--mustard) 60px,
+                    var(--burgundy) 60px,
+                    var(--burgundy) 90px);
         }
 
         .why-card {
@@ -929,7 +930,7 @@
         }
 
         /* About section dihapus - info dipindahkan ke footer */
-        
+
         /* ========== CTA SECTION - Enhanced ========== */
         .cta-retro {
             padding: 120px 0;
@@ -981,7 +982,7 @@
             height: 8px;
             background: linear-gradient(90deg, var(--burgundy) 0%, var(--mustard) 50%, var(--teal) 100%);
         }
-        
+
         .cta-title-retro {
             font-family: 'DM Serif Display', serif;
             font-size: 3rem;
@@ -990,7 +991,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .cta-subtitle-retro {
             color: var(--charcoal);
             opacity: 0.7;
@@ -999,7 +1000,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .btn-cta-retro {
             background-color: var(--burgundy);
             color: var(--cream);
@@ -1017,14 +1018,14 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .btn-cta-retro:hover {
             background-color: var(--cream);
             color: var(--charcoal);
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(212, 161, 42, 0.3);
         }
-        
+
         /* ========== FOOTER - Enhanced with Developer Info ========== */
         .footer-retro {
             background-color: var(--charcoal);
@@ -1241,33 +1242,40 @@
             align-items: center;
             gap: 5px;
         }
-        
+
         /* ========== RESPONSIVE ========== */
         @media (max-width: 992px) {
             .hero-retro {
                 background: var(--cream);
             }
+
             .hero-container {
                 grid-template-columns: 1fr;
                 gap: 50px;
                 padding: 40px 20px;
             }
+
             .hero-title-retro {
                 font-size: 3rem;
             }
+
             .navbar-brand-retro {
                 padding: 15px 20px;
                 font-size: 1.4rem;
             }
+
             .nav-link-retro {
                 display: none;
             }
+
             .btn-login-retro {
                 padding: 15px 25px !important;
             }
+
             .timeline-line {
                 display: none;
             }
+
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 30px;
@@ -1278,36 +1286,45 @@
             .hero-title-retro {
                 font-size: 2.5rem;
             }
+
             .section-title-retro {
                 font-size: 2.2rem;
             }
+
             .stat-number-retro {
                 font-size: 3rem;
             }
+
             .cta-card-retro {
                 padding: 50px 30px;
             }
+
             .cta-title-retro {
                 font-size: 2rem;
             }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
             .footer-bottom {
                 flex-direction: column;
                 gap: 15px;
                 text-align: center;
             }
+
             .how-retro::before {
                 display: none;
             }
+
             .stats-dashboard {
                 box-shadow: 8px 8px 0 var(--charcoal);
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar-retro">
@@ -1324,7 +1341,7 @@
                     <a href="#process" class="nav-link-retro">Process</a>
                     <a href="#testimonials" class="nav-link-retro">Reviews</a>
                     <a href="{{ route('login') }}" class="btn-login-retro">
-                        <i class="bi bi-unlock-fill"></i> 
+                        <i class="bi bi-unlock-fill"></i>
                         Login Portal
                     </a>
                 </div>
@@ -1358,41 +1375,41 @@
             </div>
             <div class="hero-visual" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                 <div class="stats-dashboard">
-                <div class="stats-header">
-                    <h3 class="stats-title">Dashboard Overview</h3>
-                    <span class="stats-badge">Live Data</span>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card-retro teal">
-                        <div class="stat-value">{{ number_format($totalBarang) }}</div>
-                        <div class="stat-label">Products</div>
+                    <div class="stats-header">
+                        <h3 class="stats-title">Dashboard Overview</h3>
+                        <span class="stats-badge">Live Data</span>
                     </div>
-                    <div class="stat-card-retro mustard">
-                        <div class="stat-value">{{ number_format($totalTransaksi) }}</div>
-                        <div class="stat-label">Transactions</div>
+                    <div class="stats-grid">
+                        <div class="stat-card-retro teal">
+                            <div class="stat-value">{{ number_format($totalBarang) }}</div>
+                            <div class="stat-label">Products</div>
+                        </div>
+                        <div class="stat-card-retro mustard">
+                            <div class="stat-value">{{ number_format($totalTransaksi) }}</div>
+                            <div class="stat-label">Transactions</div>
+                        </div>
+                        <div class="stat-card-retro burgundy">
+                            <div class="stat-value">Rp{{ number_format($totalPenjualan/1000000, 1) }}M</div>
+                            <div class="stat-label">Revenue</div>
+                        </div>
+                        <div class="stat-card-retro olive">
+                            <div class="stat-value">24/7</div>
+                            <div class="stat-label">Uptime</div>
+                        </div>
                     </div>
-                    <div class="stat-card-retro burgundy">
-                        <div class="stat-value">Rp{{ number_format($totalPenjualan/1000000, 1) }}M</div>
-                        <div class="stat-label">Revenue</div>
+                    <div class="mini-chart">
+                        <div class="mini-bar" style="height: 60%;"></div>
+                        <div class="mini-bar" style="height: 80%;"></div>
+                        <div class="mini-bar" style="height: 45%;"></div>
+                        <div class="mini-bar" style="height: 90%;"></div>
+                        <div class="mini-bar" style="height: 70%;"></div>
+                        <div class="mini-bar" style="height: 55%;"></div>
+                        <div class="mini-bar" style="height: 85%;"></div>
+                        <div class="mini-bar" style="height: 65%;"></div>
                     </div>
-                    <div class="stat-card-retro olive">
-                        <div class="stat-value">24/7</div>
-                        <div class="stat-label">Uptime</div>
-                    </div>
-                </div>
-                <div class="mini-chart">
-                    <div class="mini-bar" style="height: 60%;"></div>
-                    <div class="mini-bar" style="height: 80%;"></div>
-                    <div class="mini-bar" style="height: 45%;"></div>
-                    <div class="mini-bar" style="height: 90%;"></div>
-                    <div class="mini-bar" style="height: 70%;"></div>
-                    <div class="mini-bar" style="height: 55%;"></div>
-                    <div class="mini-bar" style="height: 85%;"></div>
-                    <div class="mini-bar" style="height: 65%;"></div>
-                </div>
-                </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -1541,8 +1558,9 @@
                 <div class="marquee-item">
                     <div class="marquee-icon"><i class="bi bi-lightning-fill"></i></div>
                     <div class="marquee-content">
-                        <span class="marquee-number">< 1s</span>
-                        <span class="marquee-label">Response Time</span>
+                        <span class="marquee-number">
+                            < 1s</span>
+                                <span class="marquee-label">Response Time</span>
                     </div>
                 </div>
                 <!-- Duplicate set for seamless loop -->
@@ -1584,8 +1602,9 @@
                 <div class="marquee-item">
                     <div class="marquee-icon"><i class="bi bi-lightning-fill"></i></div>
                     <div class="marquee-content">
-                        <span class="marquee-number">< 1s</span>
-                        <span class="marquee-label">Response Time</span>
+                        <span class="marquee-number">
+                            < 1s</span>
+                                <span class="marquee-label">Response Time</span>
                     </div>
                 </div>
             </div>
@@ -1787,7 +1806,7 @@
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1812,4 +1831,5 @@
         });
     </script>
 </body>
+
 </html>
