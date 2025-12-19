@@ -3,7 +3,7 @@
 @section('title', 'Cetak Transaksi Penjualan')
 
 @section('content_header')
-    <h1><i class="fas fa-print"></i> Cetak Struk Penjualan</h1>
+<h1><i class="fas fa-print"></i> Cetak Struk Penjualan</h1>
 @stop
 
 @section('content')
@@ -14,7 +14,7 @@
     <div class="card-body">
         <p class="text-center mb-3"><strong>Alamat Jl. Wonosari KM.7 Bantul</strong></p>
         <hr>
-        
+
         <div class="row mb-3">
             <div class="col-md-6">
                 <table class="table table-sm table-borderless">
@@ -88,20 +88,27 @@
 </div>
 
 <style>
-@media print {
-    .btn, .main-header, .main-sidebar, .content-header, .main-footer {
-        display: none !important;
+    @media print {
+
+        .btn,
+        .main-header,
+        .main-sidebar,
+        .content-header,
+        .main-footer {
+            display: none !important;
+        }
+
+        .card {
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .card-header {
+            background-color: white !important;
+            color: black !important;
+            border-bottom: 2px solid #000 !important;
+        }
     }
-    .card {
-        border: none !important;
-        box-shadow: none !important;
-    }
-    .card-header {
-        background-color: white !important;
-        color: black !important;
-        border-bottom: 2px solid #000 !important;
-    }
-}
 </style>
 @stop
 
