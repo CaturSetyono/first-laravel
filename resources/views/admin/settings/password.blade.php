@@ -3,7 +3,7 @@
 @section('title', 'Ubah Password')
 
 @section('content_header')
-    <h1><i class="fas fa-key"></i> Ubah Password</h1>
+<h1><i class="fas fa-key"></i> Ubah Password</h1>
 @stop
 
 @section('content')
@@ -11,12 +11,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <i class="fas fa-check-circle"></i> {{ session('success') }}
-                </div>
+            <div class="alert alert-success alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <i class="fas fa-check-circle"></i> {{ session('success') }}
+            </div>
             @endif
 
             <div class="card card-warning">
@@ -27,21 +27,21 @@
                 <form action="{{ route('admin.settings.password.update') }}" method="POST">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="card-body">
                         <div class="form-group">
                             <label for="current_password">
                                 <i class="fas fa-lock"></i> Password Saat Ini
                                 <span class="text-danger">*</span>
                             </label>
-                            <input type="password" 
-                                   class="form-control @error('current_password') is-invalid @enderror" 
-                                   id="current_password" 
-                                   name="current_password" 
-                                   placeholder="Masukkan password saat ini"
-                                   required>
+                            <input type="password"
+                                class="form-control @error('current_password') is-invalid @enderror"
+                                id="current_password"
+                                name="current_password"
+                                placeholder="Masukkan password saat ini"
+                                required>
                             @error('current_password')
-                                <span class="invalid-feedback">{{ $message }}</span>
+                            <span class="invalid-feedback">{{ $message }}</span>
                             @enderror
                         </div>
 
@@ -52,14 +52,14 @@
                                 <i class="fas fa-key"></i> Password Baru
                                 <span class="text-danger">*</span>
                             </label>
-                            <input type="password" 
-                                   class="form-control @error('password') is-invalid @enderror" 
-                                   id="password" 
-                                   name="password" 
-                                   placeholder="Masukkan password baru"
-                                   required>
+                            <input type="password"
+                                class="form-control @error('password') is-invalid @enderror"
+                                id="password"
+                                name="password"
+                                placeholder="Masukkan password baru"
+                                required>
                             @error('password')
-                                <span class="invalid-feedback">{{ $message }}</span>
+                            <span class="invalid-feedback">{{ $message }}</span>
                             @enderror
                             <small class="form-text text-muted">
                                 Password minimal 8 karakter
@@ -71,16 +71,16 @@
                                 <i class="fas fa-key"></i> Konfirmasi Password Baru
                                 <span class="text-danger">*</span>
                             </label>
-                            <input type="password" 
-                                   class="form-control" 
-                                   id="password_confirmation" 
-                                   name="password_confirmation" 
-                                   placeholder="Ulangi password baru"
-                                   required>
+                            <input type="password"
+                                class="form-control"
+                                id="password_confirmation"
+                                name="password_confirmation"
+                                placeholder="Ulangi password baru"
+                                required>
                         </div>
 
                         <div class="alert alert-warning">
-                            <i class="fas fa-exclamation-triangle"></i> 
+                            <i class="fas fa-exclamation-triangle"></i>
                             <strong>Peringatan:</strong>
                             <ul class="mb-0 mt-2">
                                 <li>Pastikan password yang Anda masukkan aman dan mudah diingat</li>
